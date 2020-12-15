@@ -3,6 +3,8 @@ package com.lambdaschool.schools.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,6 +29,8 @@ public class Course
      */
     @Column(nullable = true,
         unique = true)
+    @Size(min = 2, max = 50)
+    @NotNull
     private String coursename;
 
     /**
